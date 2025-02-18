@@ -1,0 +1,22 @@
+[
+  {
+    "train_id": "bacs",
+    "train_no": 12345,
+    "seats": [
+      [0,0,0,0,0,0],
+      [0,0,0,0,0,0],
+      [0,0,0,0,0,0],
+      [0,0,0,0,0,0]
+    ],
+    "station_times": {
+      "Toronto": "13:50:00",
+      "Mississauga": "14:20:00",
+      "Brampton": "15:00:00"
+    },
+    "stations": [
+      "Toronto",
+      "Mississauga",
+      "Brampton"
+    ]
+  }
+]
