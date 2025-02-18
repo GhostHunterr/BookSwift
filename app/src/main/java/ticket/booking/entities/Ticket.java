@@ -20,23 +20,23 @@ public class Ticket {
     }
 
     //GETTERS
-    String getTicketId() {
+    public String getTicketId() {
         return this.ticketId;
     }
 
-    String getUserId() {
+    public String getUserId() {
         return this.userId;
     }
 
-    String getSource() {
+    public String getSource() {
         return this.source;
     }
 
-    String getDestination() {
+    public String getDestination() {
         return this.destination;
     }
 
-    String getDateOfTravel() {
+    public String getDateOfTravel() {
         return this.dateOfTravel;
     }
 

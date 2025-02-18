@@ -3,12 +3,74 @@
  */
 package ticket.booking;
 
-import ticket.booking.entities.Ticket;
+import ticket.booking.services.UserBookingService;
+import ticket.booking.entities.*;
+import ticket.booking.util.*;
+
+import java.io.IOException;
+import java.util.Collections;
+import java.util.Scanner;
+import java.util.UUID;
 
 public class App {
 
     public static void main(String[] args) {
-        Ticket t1;
-        System.out.println("hello");
+        System.out.println("Running Train Booking System.");
+        Scanner scanner = new Scanner(System.in);
+        int option = 0;
+        UserBookingService userBookingService;
+
+        try {
+            userBookingService = new UserBookingService();
+        } catch (IOException e) {
+            System.out.println("Failed to Load Users.");
+            return;
+        }
+
+        while (option != 7) {
+            System.out.println("Choose Option");
+            System.out.println("1. Sign Up");
+            System.out.println("2. Login");
+            System.out.println("3. Fetch Bookings");
+            System.out.println("4. Search Trains");
+            System.out.println("5. Book a seat");
+            System.out.println("6. Cancel my Booking");
+            System.out.println("7. Exit the App");
+            option = scanner.nextInt();
+
+            switch (option) {
+                case 1: {
+                    System.out.println("Enter the username to signup");
+                    String nameToSignup = scanner.next();
+                    System.out.println("Enter the password to signup");
+                    String passwordToSignUp = scanner.next();
+                    User newUser = new User(nameToSignup, passwordToSignUp, UserServiceUtil.hashPassword(passwordToSignUp), Collections.emptyList(), UUID.randomUUID().toString());
+                    System.out.println(userBookingService.signUp(newUser) ? "Registered Successfully" : "Failed to Register User :(\n Try again!");
+                    break;
+                }
+                case 2: {
+                    System.out.println("Enter the username to login");
+                    String nameToLogin = scanner.next();
+                    System.out.println("Enter the password to login");
+                    String passwordToLogin = scanner.next();
+                    User existingUser = new User(nameToLogin, passwordToLogin, UserServiceUtil.hashPassword(passwordToLogin), Collections.emptyList(), UUID.randomUUID().toString());
+                    try {
+                        userBookingService = new UserBookingService(existingUser);
+                        System.out.println("Logged In Successfully!");
+                    } catch (IOException e) {
+                        System.out.println("Failed To Login :(\n Try Again!");
+                    }
+                    break;
+                }
+                case 3: {
+                    System.out.println("Fetching your Bookings...");
+                    userBookingService.fetchBookings();
+                    break;
+                }
+                case 4: {
+
+                }
+            }
+        }
     }
 }
