@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bd3101fe-4029-47bf-93b7-bbec41875f91" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ticket/booking/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticket/booking/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ticket/booking/entities/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticket/booking/entities/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ticket/booking/localDb/trains.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticket/booking/localDb/trains.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ticket/booking/localDb/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticket/booking/localDb/users.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ticket/booking/services/UserBookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ticket/booking/services/UserBookingService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

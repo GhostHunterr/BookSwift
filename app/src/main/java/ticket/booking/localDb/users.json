@@ -18,16 +18,7 @@
   {
     "name": "Farhan",
     "hashed_password": "$2a$10$GORYCFzQm0qnAJvyjc7ggercKKVBITmGwwcQfYpxr5ab94hIIcqcq",
-    "tickets_booked": [
-      {
-        "ticket_id": "59517ea9-adb0-43e6-a98c-1c4b716af26d",
-        "user_id": "b7eb7689-00f9-4635-8bfe-391c9869c0b6",
-        "source": "Toronto",
-        "destination": "Brampton",
-        "date_of_travel": "13:50:00",
-        "ticket_info": "Ticket ID: 59517ea9-adb0-43e6-a98c-1c4b716af26d belongs to User b7eb7689-00f9-4635-8bfe-391c9869c0b6 from Toronto to Brampton on 13:50:00"
-      }
-    ],
+    "tickets_booked": [],
     "user_id": "b7eb7689-00f9-4635-8bfe-391c9869c0b6",
     "present": true
   }

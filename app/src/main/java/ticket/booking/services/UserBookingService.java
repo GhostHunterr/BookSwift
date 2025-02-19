@@ -54,9 +54,11 @@ public class UserBookingService {
 
     public boolean cancelBooking(String ticketId) {
         //Get the List
-        try {
-            List<Ticket> bookings = user.getTicketsBooked();
 
+        try {
+            int idx = userList.indexOf(user);
+
+            List<Ticket> bookings = user.getTicketsBooked();
             //Remove
             boolean removed = bookings.removeIf(e -> e.getTicketId().equals(ticketId));
 
@@ -66,6 +68,7 @@ public class UserBookingService {
             } else {
                 user.setTicketsBooked(bookings);
             }
+            userList.set(idx, user);
             saveUserListToFile();
 
             return removed;
