@@ -66,9 +66,14 @@ public class App {
                 option = scanner.nextInt();
 
                 switch (option) {
-                    case 1: {
+                    case 1, 4: {
                         System.out.println("Fetching your Bookings...");
                         userBookingService.fetchBookings();
+
+                        if (option == 4) {
+                            System.out.println("Enter your Ticket Id: ");
+                            System.out.println(userBookingService.cancelBooking(scanner.next()) ? "Booking Removed Successfully" : "Error Removing the Booking.\nPlease Try again.");
+                        }
                         break;
                     }
                     case 2, 3: {
@@ -121,7 +126,7 @@ public class App {
                                         if ((0 <= row && row < seats.size()) && (0 <= col && col < seats.get(0).size())) {
                                             System.out.println("Booking your seat....");
                                             try {
-                                                Boolean booked = userBookingService.bookTrainSeat(trainSelectedForBooking, row, col);
+                                                Boolean booked = userBookingService.bookTrainSeat(trainSelectedForBooking, row, col, source, destination);
                                                 valid = booked;
                                             } catch (IOException e) {
                                                 System.out.println("Error Booking Ticket.\nPlease Try Again.");
@@ -137,9 +142,6 @@ public class App {
                         }
 
                         break;
-                    }
-                    case 4: {
-
                     }
                     case 5: {
                         userBookingService.logoutUser();

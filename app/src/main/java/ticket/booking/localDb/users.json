@@ -1,7 +1,6 @@
 [
   {
     "name": "John",
-    "password": "12345",
     "hashed_password": "$2a$10$MqonEcizso4Re9iFEMajHOIHCUd5O3Q.XZX779C50ZnC/Hb6mirwW",
     "tickets_booked": [
       {
@@ -10,7 +9,7 @@
         "source": "Toronto",
         "destination": "Brampton",
         "date_of_travel": "2023-12-08T18:30:00Z",
-        "ticket_info": "Ticket ID: your_ticket_id belongs to User &s from john123 to Toronto on Brampton"
+        "ticket_info": "Ticket ID: your_ticket_id belongs to User john123 from Toronto to Brampton on 2023-12-08T18:30:00Z"
       }
     ],
     "user_id": "john123",
@@ -18,9 +17,17 @@
   },
   {
     "name": "Farhan",
-    "password": "farhan",
     "hashed_password": "$2a$10$GORYCFzQm0qnAJvyjc7ggercKKVBITmGwwcQfYpxr5ab94hIIcqcq",
-    "tickets_booked": [],
+    "tickets_booked": [
+      {
+        "ticket_id": "59517ea9-adb0-43e6-a98c-1c4b716af26d",
+        "user_id": "b7eb7689-00f9-4635-8bfe-391c9869c0b6",
+        "source": "Toronto",
+        "destination": "Brampton",
+        "date_of_travel": "13:50:00",
+        "ticket_info": "Ticket ID: 59517ea9-adb0-43e6-a98c-1c4b716af26d belongs to User b7eb7689-00f9-4635-8bfe-391c9869c0b6 from Toronto to Brampton on 13:50:00"
+      }
+    ],
     "user_id": "b7eb7689-00f9-4635-8bfe-391c9869c0b6",
     "present": true
   }

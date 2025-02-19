@@ -75,13 +75,18 @@ public class UserBookingService {
 
     }
 
-
-    public Boolean bookTrainSeat(Train train, int row, int col) throws IOException {
+    public Boolean bookTrainSeat(Train train, int row, int col, String source, String destination) throws IOException {
         try {
             TrainService trainService = new TrainService();
             List<List<Integer>> seats = train.getSeats();
+            int idx = userList.indexOf(user);
             if (seats.get(row).get(col) == 0) {
                 seats.get(row).set(col, 1);
+
+                user.getTicketsBooked().add(new Ticket(UUID.randomUUID().toString(), user.getUserId(), source, destination, train.getStationTimes().get(source)));
+                userList.set(idx, user);
+                saveUserListToFile();
+
                 trainService.updateTrain(train);
                 return true;
             } else {
