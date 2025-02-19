@@ -1,11 +1,21 @@
 package ticket.booking.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Ticket {
     private String ticketId;
     private String userId;
     private String source;
     private String destination;
     private String dateOfTravel;
+
+
+    public Ticket() {
+    }
 
     public Ticket(String ticketId, String userId, String source, String destination, String dateOfTravel) {
         this.ticketId = ticketId;

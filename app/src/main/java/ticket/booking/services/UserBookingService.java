@@ -14,7 +14,7 @@ public class UserBookingService {
     private ObjectMapper objectMapper = new ObjectMapper();
 
     //Local Db path
-    private static final String USERS_PATH = "app/src/main/java/ticket/booking/localDb/users.json";
+    private static final String USERS_PATH = "./app/src/main/java/ticket/booking/localDb/users.json";
 
     public UserBookingService() throws IOException {
         loadUsers();
@@ -26,8 +26,9 @@ public class UserBookingService {
 
     }
 
-    public boolean loginUser() {
-        Optional<User> foundUser = userList.stream().filter(u -> u.getName().equals(user.getName()) && UserServiceUtil.checkPassword(user.getPassword(), u.getHashedPassword())).findFirst();
+    public boolean loginUser(String userName, String password) {
+        Optional<User> foundUser = userList.stream().filter(u -> u.getName().equals(userName) && UserServiceUtil.checkPassword(password, u.getHashedPassword())).findFirst();
+        foundUser.ifPresent(u -> user = u);
         return foundUser.isPresent();
     }
 
@@ -63,10 +64,20 @@ public class UserBookingService {
 
             return removed;
         } catch (IOException e) {
-            e.printStackTrace();
             return false;
         }
 
+    }
+
+    //OTHER
+
+    public List<Train> getTrains(String source, String destination) throws IOException {
+        try {
+            TrainService trainService = new TrainService();
+            return trainService.searchTrains(source, destination);
+        } catch (IOException e) {
+            throw e;
+        }
     }
 
 
@@ -80,5 +91,9 @@ public class UserBookingService {
         File users = new File(USERS_PATH);
         userList = objectMapper.readValue(users, new TypeReference<List<User>>() {
         });
+    }
+
+    public boolean isLoggedIn() {
+        return (user != null && user.isPresent());
     }
 }

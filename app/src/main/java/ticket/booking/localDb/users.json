@@ -10,37 +10,26 @@
         "source": "Toronto",
         "destination": "Brampton",
         "date_of_travel": "2023-12-08T18:30:00Z",
-        "train": {
-          "train_id": "bacs",
-          "train_no": "12345",
-          "seats": [
-            [0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0]
-          ],
-          "station_times": {
-            "Toronto": "13:50:00",
-            "Mississauga": "14:20:00",
-            "Brampton": "15:00:00"
-          },
-          "stations": [
-            "Toronto",
-            "Mississauga",
-            "Brampton"
-          ],
-          "train_info": "Train ID: bacs Train No: 12345"
-        },
-        "ticket_info": "Ticket ID: your_ticket_id belongs to User john123 from Toronto to Brampton on 2023-12-08T18:30:00Z"
+        "ticket_info": "Ticket ID: your_ticket_id belongs to User &s from john123 to Toronto on Brampton"
       }
     ],
-    "user_id": "john123"
+    "user_id": "john123",
+    "present": true
   },
   {
     "name": "Harry",
     "password": "hhbb11",
     "hashed_password": "$2a$10$O/OWE.xh3gttMANiM4BIX.mo.4/myik1J739DZ25ecVENk8xhMCW2",
     "tickets_booked": [],
-    "user_id": "fe46da4d-c8d1-4229-97e6-600dce6941e8"
+    "user_id": "fe46da4d-c8d1-4229-97e6-600dce6941e8",
+    "present": true
+  },
+  {
+    "name": "Farhan",
+    "password": "farhan",
+    "hashed_password": "$2a$10$GORYCFzQm0qnAJvyjc7ggercKKVBITmGwwcQfYpxr5ab94hIIcqcq",
+    "tickets_booked": [],
+    "user_id": "b7eb7689-00f9-4635-8bfe-391c9869c0b6",
+    "present": true
   }
 ]

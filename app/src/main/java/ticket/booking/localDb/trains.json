@@ -9,9 +9,9 @@
       [0,0,0,0,0,0]
     ],
     "station_times": {
-      "bangalore": "13:50:00",
-      "jaipur": "13:50:00",
-      "delhi": "13:50:00"
+      "Toronto": "13:50:00",
+      "Mississauga": "13:50:00",
+      "Brampton": "13:50:00"
     },
     "stations": [
       "Toronto",

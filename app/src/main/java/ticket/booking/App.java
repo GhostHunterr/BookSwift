@@ -8,9 +8,7 @@ import ticket.booking.entities.*;
 import ticket.booking.util.*;
 
 import java.io.IOException;
-import java.util.Collections;
-import java.util.Scanner;
-import java.util.UUID;
+import java.util.*;
 
 public class App {
 
@@ -23,6 +21,7 @@ public class App {
         try {
             userBookingService = new UserBookingService();
         } catch (IOException e) {
+            e.printStackTrace();
             System.out.println("Failed to Load Users.");
             return;
         }
@@ -53,13 +52,7 @@ public class App {
                     String nameToLogin = scanner.next();
                     System.out.println("Enter the password to login");
                     String passwordToLogin = scanner.next();
-                    User existingUser = new User(nameToLogin, passwordToLogin, UserServiceUtil.hashPassword(passwordToLogin), Collections.emptyList(), UUID.randomUUID().toString());
-                    try {
-                        userBookingService = new UserBookingService(existingUser);
-                        System.out.println("Logged In Successfully!");
-                    } catch (IOException e) {
-                        System.out.println("Failed To Login :(\n Try Again!");
-                    }
+                    System.out.println(userBookingService.loginUser(nameToLogin, passwordToLogin) ? "Logged In Successfully" : "Failed to Login User :(\n Try again!");
                     break;
                 }
                 case 3: {
@@ -68,6 +61,27 @@ public class App {
                     break;
                 }
                 case 4: {
+                    System.out.println("Enter your source Station.");
+                    String source = scanner.next();
+                    System.out.println("Enter your Destination Station.");
+                    String destination = scanner.next();
+                    try {
+                        List<Train> availableTrains = userBookingService.getTrains(source, destination);
+                        //Print them
+                        if (availableTrains.isEmpty()) {
+                            System.out.println("No Trains Found!");
+                        } else {
+                            System.out.println("-----Available Trains-----");
+                            for (Train t : availableTrains) {
+                                System.out.println(t.getTrainInfo());
+                            }
+                            System.out.println("--------That's it----------");
+                        }
+                    } catch (IOException e) {
+                        System.out.println("Couldn't Fetch the List.");
+                    }
+                }
+                case 5: {
 
                 }
             }
