@@ -21,7 +21,7 @@ A Java-based ticket booking system that allows users to log in, book tickets, ca
 - **Java:** Core application logic.
 - **Gradle:** Build automation and dependency management.
 - **Jackson:** JSON parsing and generation.
-- **BCrypt:** Password hashing (using jBCrypt or Spring Security's BCryptPasswordEncoder).
+- **BCrypt:** Password hashing and salting.
 - **Git:** Version control.
 
 ## Getting Started
