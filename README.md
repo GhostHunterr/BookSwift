@@ -37,7 +37,7 @@ A Java-based ticket booking system that allows users to log in, book tickets, ca
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/ticket-booking.git
+   git clone https://github.com/GhostHunterr/BookSwift.git
    cd ticket-booking
    ```
 
