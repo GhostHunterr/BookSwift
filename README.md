@@ -30,7 +30,7 @@ A Java-based ticket booking system that allows users to log in, book tickets, ca
 
 - Java JDK 8 or higher
 - Git
-- (Optional) Gradle installed globally, though the Gradle Wrapper is provided
+- Gradle installed globally
 
 ### Installation
 
