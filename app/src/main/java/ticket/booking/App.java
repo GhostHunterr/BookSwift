@@ -34,7 +34,11 @@ public class App {
                 System.out.println("1. Sign Up");
                 System.out.println("2. Login");
                 System.out.println("3. Exit the App");
-                option = scanner.nextInt();
+                if (scanner.hasNextInt()) {
+                    option = scanner.nextInt();
+                } else {
+                    option = 3;
+                }
 
                 switch (option) {
                     case 1: {
