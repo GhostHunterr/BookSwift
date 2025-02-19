@@ -8,6 +8,7 @@ import java.io.*;
 import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class TrainService {
 
@@ -33,6 +34,16 @@ public class TrainService {
         return (sourceIndex != -1 && destinationIndex != -1) && (sourceIndex < destinationIndex);
     }
 
+    public void updateTrain(Train t) throws IOException {
+        OptionalInt foundTrainInd = IntStream.range(0, trainList.size())
+                .filter(i -> trainList.get(i).getTrainId().equalsIgnoreCase(t.getTrainId()))
+                .findFirst();
+
+        if (foundTrainInd.isPresent()) {
+            trainList.set(foundTrainInd.getAsInt(), t);
+            saveTrainListToFile();
+        }
+    }
 
     //Helper
 

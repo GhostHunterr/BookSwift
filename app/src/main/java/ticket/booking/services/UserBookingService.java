@@ -42,6 +42,12 @@ public class UserBookingService {
         }
     }
 
+    public void logoutUser() {
+        if (user.isPresent()) {
+            user = null;
+        }
+    }
+
     public void fetchBookings() {
         user.printTickets();
     }
@@ -69,6 +75,25 @@ public class UserBookingService {
 
     }
 
+
+    public Boolean bookTrainSeat(Train train, int row, int col) throws IOException {
+        try {
+            TrainService trainService = new TrainService();
+            List<List<Integer>> seats = train.getSeats();
+            if (seats.get(row).get(col) == 0) {
+                seats.get(row).set(col, 1);
+                trainService.updateTrain(train);
+                return true;
+            } else {
+                System.out.println("This seat is already booked.");
+                return false;
+            }
+        } catch (IOException e) {
+            throw e;
+        }
+    }
+
+
     //OTHER
 
     public List<Train> getTrains(String source, String destination) throws IOException {
@@ -79,7 +104,6 @@ public class UserBookingService {
             throw e;
         }
     }
-
 
     //Helper Functions;
     public void saveUserListToFile() throws IOException {
@@ -96,4 +120,10 @@ public class UserBookingService {
     public boolean isLoggedIn() {
         return (user != null && user.isPresent());
     }
+
+    public String getCurrentUserInfo() {
+        return String.format("USER NAME: %s", user.getName());
+    }
+
+
 }
