@@ -66,7 +66,7 @@ A Java-based ticket booking system that allows users to log in, book tickets, ca
 ## Configuration
 
 - **JSON Persistence:**  
-  User data is stored in a JSON file (configured in your code as `USERS_PATH`).  
+  User data is stored in a JSON file (configured in your code as `./localDb/users.json`).  
 - **Property Naming Strategy:**  
   The project is configured to use `PropertyNamingStrategies.SNAKE_CASE` for Jackson to map JSON snake_case properties (e.g., `hashed_password`) to Java camelCase fields (e.g., `hashedPassword`).
 
